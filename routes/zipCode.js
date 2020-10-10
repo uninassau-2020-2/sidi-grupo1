@@ -8,17 +8,18 @@ const statusHeader = {
   SERVER_ERROR: 500,
 }
 
-const isValidZipCode = (zipCode) => {
+const isValidCep = (cep) => {
+
   const reg = /[0-9]{8}/g;
-  return reg.test(zipCode) && zipCode.length === 8
+  return reg.test(cep) && cep.length === 8
 }
 
 router.get('/:cep', function (req, res, next) {
 
-  const zipCode = req.params.cep;
+  const cep = req.params.cep;
 
-  if (isValidZipCode(zipCode)) {
-    axios.get(`https://viacep.com.br/ws/${zipCode}/json/`)
+  if (isValidCep(cep)) {
+    axios.get(`https://viacep.com.br/ws/${cep}/json/`)
       .then(function (response) {
         if (response.data) {
           if (response.data.erro)
@@ -32,7 +33,7 @@ router.get('/:cep', function (req, res, next) {
         res.status(statusHeader.BAD_REQUEST).send({ 'message': 'cep não encontrado' });
       });
   } else
-    res.status(statusHeader.BAD_REQUEST).send({ 'message': 'cep inválido' });
+    res.status(statusHeader.BAD_REQUEST).send({ 'message': 'cep não é válido' });
 });
 
 module.exports = router;
