@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Formulário de cadastro de Prdutos</title>
+		</head>
+	<body>
+
+		<h1>Adicionar produtos</h1>
+		<br />
+
+		<form action="/produtos/salvar" method="post">
+			<label>Nome</label>
+			<input type="text" id="nome" name="nome" placeholder="Nome do produto" />
+			<br />
+			<label>Descrição</label>
+			<textarea id="descricao" name="descricao" rows="5" cols="30"></textarea>
+			<br />
+			<label>Preço</label>
+			<input type="text" id="valor" name="valor" placeholder="Valor do produto" />
+			<br />
+			<input type="submit" value="Enviar" />
+		</form>
+	</body>
+</html>
