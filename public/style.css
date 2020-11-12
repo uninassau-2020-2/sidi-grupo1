@@ -1,0 +1,102 @@
+@media screen and (min-width: 1080px){
+    #logo-img{
+        width: 30%;
+        
+    }
+}
+
+
+@media screen and (max-width: 900px){
+    #logo-img{
+        width: 80%;
+        
+    }
+}
+
+
+ #logo-img{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ #buttonSubmit{
+    text-align: right;
+    font-weight: bold;
+    background-color: #91553D;
+    border-color: #91553D;
+ }
+
+ label{
+    font-weight: bold;
+    color: #91553D;
+ }
+
+ #InputPassword1,#InputEmail1{
+    border-color: #91553D;
+    border-radius: 10px;
+    border-width: 2px;
+ }
+
+
+#usuario-img{
+    max-width: 70px;
+    max-height:70px;
+
+    border: 3px solid;
+    border-radius: 80%;
+    border-color: #91553D ;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#legenda-img{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%); 
+}
+
+#linha{
+
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    border:none;
+    border-top:3px solid rgb(7, 1, 1);
+    border-bottom:3px dotted rgb(7, 1, 1);
+    color: rgb(7, 1, 1);
+    height: 15px;
+
+}
+
+.btns{
+
+    border-radius: 10%;
+
+    margin-top: 30px;
+
+    width: 100px;
+    height: 100px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+    font-weight: bold;
+    background-color: #91553D;
+    border-color: #91553D;
+
+}
