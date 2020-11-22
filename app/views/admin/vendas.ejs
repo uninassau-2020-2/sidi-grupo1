@@ -34,26 +34,26 @@
         <div class="col"><center>
 
 			<div class="row">
-                <div class="col"><center>
+                <div class="col">
                     <div class="col-5">
-                    <form action="/produtos/salvar" method="post">
+                    <form action="/produtos/vender" method="post">
                         <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do produto" />
+                        <label>Produto: </label>
+                        <select class="form-control mb-2 mr-sm-2" name="produto" id="produtoVendido">
+                            <% for(var i=0; i < produtos.length; i++) { %>
+                            <option id="<%= produtos[i].id %>" value="<%= produtos[i].id %>"><%= produtos[i].nome %></option>    
+                            <% } %>
+                          </select>
                         </div>
-                        <label>Descrição</label>
-                        <textarea class="form-control" id="descricao" name="descricao" rows="5" cols="30"></textarea>
+                        <label>Quantidade: </label>
+                        <input class="form-control" id="quantidade" name="quantidade" type="number" step="1.0" size="4" value="1" />
                         <br />
-                        <label>Preço</label>
-                        <input type="text" class="form-control" id="valor" name="valor" placeholder="Valor do produto" />
-                        <br />
-                        <input type="submit" class="btn btn-primary" value="Enviar" />
+                        <input type="submit" class="btn btn-primary" value="Vender" />
                     </form>
                     </div>
                 </div>
         
-            </div></center>
-
+            </div>
         </div>
 
     </div></center>

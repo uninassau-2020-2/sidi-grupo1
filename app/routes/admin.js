@@ -35,4 +35,15 @@ module.exports = function(application){
             res.redirect('/produtos');
         });
     });
+
+    application.post('/produtos/vender', function(req,res){
+        var produto = req.body;
+        console.log(produto)
+        var connection = application.config.dbConnection();
+		var produtoModel = application.app.models.produtoModel;
+
+        produtoModel.venderProduto(connection,produto.produto, produto.quantidade, function(error, result){
+            res.redirect('/vendas');
+        });
+    });
 }

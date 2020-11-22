@@ -5,8 +5,8 @@ module.exports = function(application) {
 		var connection = application.config.dbConnection();
 		var produtoModel = application.app.models.produtoModel;
 
-		produtoModel.getVendas(connection, function(error, result){
-			res.render("admin/vendas", {vendas : result});
+		produtoModel.getProdutos(connection, function(error, result){
+			res.render("admin/vendas", {produtos : result});
 		});	
 	});
 

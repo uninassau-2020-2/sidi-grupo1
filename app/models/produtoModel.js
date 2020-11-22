@@ -4,12 +4,12 @@ module.exports = function(){
 		connection.query('SELECT * FROM main WHERE deleted = 0', callback);
 	}
 
-	this.getProduto = function(connection, callback){
-		connection.query('select * from main where id = 1', callback);
+	this.getProduto = function(connection, id_produto, callback){
+		connection.query('select * from main where id = '+id_produto, callback);
 	}
 
 	this.getVendas = function(connection, callback){
-		connection.query('SELECT * FROM vendas', callback);
+		vendas = connection.query('SELECT * FROM vendas', callback);
 	}
 
 	this.salvarProduto = function(produto, connection, callback){
@@ -26,6 +26,10 @@ module.exports = function(){
 
 	this.deleteProduto = function(connection, id_produto, callback){
 		connection.query('UPDATE main SET deleted = 1 where id ='+id_produto+';', callback);
+	}
+
+	this.venderProduto = function(connection, id_produto, quantidade, callback){
+        connection.query('INSERT INTO vendas (id_produto, quantidade, id_funcionario) VALUES ('+id_produto+','+quantidade+', 1)', callback);
 	}
 	
 	return this;

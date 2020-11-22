@@ -5,9 +5,14 @@ module.exports = function(application) {
 		var connection = application.config.dbConnection();
 		var produtoModel = application.app.models.produtoModel;
 
-		produtoModel.getVendas(connection, function(error, result){
-			res.render("admin/relatorios", {vendas : result});
+		produtoModel.getVendas(connection, function(error, vendas){
+			produtoModel.getProdutos(connection, function(error, produtos){
+				//console.log(produtos[1])
+			res.render("admin/relatorios", {vendas : vendas, produtos: produtos});
+			});	
 		});	
+
+		
 	});
 
 };

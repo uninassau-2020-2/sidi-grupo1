@@ -33,7 +33,34 @@
 <div class="row">
         <div class="col"><center>
 
-			//////////////////
+			<table>
+				<tr>
+					<td>ID da venda</td>
+					<td>Produto</td>
+					<td>Quantidade</td>
+                    <td>Valor Total</td>
+                    <td>Vendedor</td>
+                    <td>Data</td>
+				</tr>
+				<% for(var i=0; i < vendas.length; i++) {
+                    var produtoId = 1;
+                    for(var j=0; j <produtos.length ; j++){
+                        if(produtos[j].id == vendas[i].id_produto){
+                            produtoId = j;
+                        }
+                    } 
+                    
+                    //console.log(produtoId)
+                    %>
+						<td><input class="form-control" id="id_venda" name="id_venda" value="<%= vendas[i].id %>" readonly></td>
+						<td><input class="form-control" id="nome_produto" name="nome_produto" value="<%= produtos[produtoId].nome %> " readonly/></td>
+                        <td><input class="form-control" id="quantidade" name="quantidade" value="<%= vendas[i].quantidade %> " readonly/></td>
+                        <td><input class="form-control" id="valor_total" name="valor_total" value="<%= parseFloat((produtos[produtoId].valor * vendas[i].quantidade).toFixed(2)) %> " readonly/></td>
+                        <td><input class="form-control" id="vendedor" name="vendedor" value="<%=     vendas[i].id_funcionario %>" readonly /></td>
+                        <td><input class="form-control" id="data" name="data" value="<%= vendas[i].date %>" readonly/></td>
+					</tr>
+				<% } %>
+			</table>
 
         </div>
 
