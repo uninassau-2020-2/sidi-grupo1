@@ -13,4 +13,26 @@ module.exports = function(application){
             res.redirect('/produtos');
         });
     });
+
+    application.post('/produtos/editar', function(req,res){
+        var produto = req.body;
+
+        var connection = application.config.dbConnection();
+		var produtoModel = application.app.models.produtoModel;
+
+        produtoModel.editarProduto(connection,produto.id_produto, produto.nome_produto, produto.desc_produto, produto.valor_produto, function(error, result){
+            res.redirect('/produtos');
+        });
+    });
+
+    application.post('/produtos/deletar', function(req,res){
+        var produto = req.body;
+
+        var connection = application.config.dbConnection();
+		var produtoModel = application.app.models.produtoModel;
+
+        produtoModel.deleteProduto(connection,produto.id_produto, function(error, result){
+            res.redirect('/produtos');
+        });
+    });
 }

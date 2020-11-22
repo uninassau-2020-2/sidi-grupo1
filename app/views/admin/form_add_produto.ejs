@@ -32,20 +32,21 @@
 
 <div class="row">
         <div class="col"><center>
-
-			<form action="/produtos/salvar" method="post">
+            <div class="col-5">
+            <form action="/produtos/salvar" method="post">
+                <div class="form-group">
 				<label>Nome</label>
-				<input type="text" id="nome" name="nome" placeholder="Nome do produto" />
-				<br />
+				<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do produto" />
+                </div>
 				<label>Descrição</label>
-				<textarea id="descricao" name="descricao" rows="5" cols="30"></textarea>
+				<textarea class="form-control" id="descricao" name="descricao" rows="5" cols="30"></textarea>
 				<br />
 				<label>Preço</label>
-				<input type="text" id="valor" name="valor" placeholder="Valor do produto" />
+				<input type="text" class="form-control" id="valor" name="valor" placeholder="Valor do produto" />
 				<br />
-				<input type="submit" value="Enviar" />
+				<input type="submit" class="btn btn-primary" value="Enviar" />
 			</form>
-
+            </div>
         </div>
 
     </div></center>
